@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+<model name="uwb_tag">
+<static>false</static>
+<link name="link">
+<inertial>
+<mass>0.01</mass>
+<inertia>
+<ixx>0.00001</ixx><ixy>0</ixy><ixz>0</ixz>
+<iyy>0.00001</iyy><iyz>0</iyz><izz>0.00001</izz>
+</inertia>
+</inertial>
+<visual name="visual">
+<geometry>
+<box>
+<size>0.02 0.02 0.02</size>
+</box>
+</geometry>
+<material>
+<ambient>1 0 0 1</ambient>
+<diffuse>1 0 0 1</diffuse>
+</material>
+</visual>
+<collision name="collision">
+<geometry>
+<box>
+<size>0.02 0.02 0.02</size>
+</box>
+</geometry>
+</collision>
+</link>
+</model>
+</sdf>

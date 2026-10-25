@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version='1.9'>
+  <model name='x500_uav_contest_2026'>
+    <self_collide>false</self_collide>
+    <include merge='true'>
+      <uri>x500</uri>
+    </include>
+
+    <!-- Camera Down (center) -->
+    <include merge='true'>
+      <uri>model://mono_cam</uri>
+      <pose>0 0 .08 0 1.5707 0</pose>
+      <name>mono_cam</name>
+    </include>
+    <joint name="CameraJoint" type="fixed">
+      <parent>base_link</parent>
+      <child>camera_link</child>
+      <pose relative_to="base_link">0 0 0 0 1.5707 0</pose>
+    </joint>
+
+    <!-- Tennis Ball 1 (0 deg) -->
+    <model name="tennis_ball_1">
+      <pose relative_to="base_link">0.057 0 -0.12 0 0 0</pose>
+      <link name='ball_1_link'>
+        <inertial>
+          <mass>0.057</mass>
+          <inertia>
+            <ixx>2.41e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.41e-05</iyy>
+            <iyz>0</iyz>
+            <izz>2.41e-05</izz>
+          </inertia>
+        </inertial>
+        <velocity_decay>
+          <linear>0.01</linear>
+          <angular>0.06</angular>
+        </velocity_decay>
+
+        <enable_wind>true</enable_wind>
+        <visual name='ball_1_visual'>
+          <geometry>
+            <sphere>
+              <radius>0.0325</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.8 0.9 0.0 1</ambient>
+            <diffuse>0.8 0.9 0.0 1</diffuse>
+            <specular>0.3 0.3 0.3 1</specular>
+          </material>
+        </visual>
+        <collision name='ball_1_collision'>
+          <geometry>
+            <sphere>
+              <radius>0.0325</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.4</mu>
+                <mu2>0.4</mu2>
+              </ode>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0.8</restitution_coefficient>
+              <threshold>0.1</threshold>
+            </bounce>
+            <contact>
+              <ode>
+                <min_depth>0.002</min_depth>
+                <max_vel>5.0</max_vel>
+                <kp>1e5</kp>
+                <kd>300</kd>
+              </ode>
+            </contact>
+          </surface>
+        </collision>
+      </link>
+    </model>
+
+    <!-- Tennis Ball 2 (72 deg) -->
+    <model name="tennis_ball_2">
+      <pose relative_to="base_link">0.0176 0.0542 -0.12 0 0 0</pose>
+      <link name='ball_2_link'>
+        <inertial>
+          <mass>0.057</mass>
+          <inertia>
+            <ixx>2.41e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.41e-05</iyy>
+            <iyz>0</iyz>
+            <izz>2.41e-05</izz>
+          </inertia>
+        </inertial>
+        <velocity_decay>
+          <linear>0.01</linear>
+          <angular>0.06</angular>
+        </velocity_decay>
+
+        <enable_wind>true</enable_wind>
+        <visual name='ball_2_visual'>
+          <geometry>
+            <sphere>
+              <radius>0.0325</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.8 0.9 0.0 1</ambient>
+            <diffuse>0.8 0.9 0.0 1</diffuse>
+            <specular>0.3 0.3 0.3 1</specular>
+          </material>
+        </visual>
+        <collision name='ball_2_collision'>
+          <geometry>
+            <sphere>
+              <radius>0.0325</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.4</mu>
+                <mu2>0.4</mu2>
+              </ode>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0.8</restitution_coefficient>
+              <threshold>0.1</threshold>
+            </bounce>
+            <contact>
+              <ode>
+                <min_depth>0.002</min_depth>
+                <max_vel>5.0</max_vel>
+                <kp>5e5</kp>
+                <kd>300</kd>
+              </ode>
+            </contact>
+          </surface>
+        </collision>
+      </link>
+    </model>
+
+    <!-- Tennis Ball 3 (144 deg) -->
+    <model name="tennis_ball_3">
+      <pose relative_to="base_link">-0.0461 0.0335 -0.12 0 0 0</pose>
+      <link name='ball_3_link'>
+        <inertial>
+          <mass>0.057</mass>
+          <inertia>
+            <ixx>2.41e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.41e-05</iyy>
+            <iyz>0</iyz>
+            <izz>2.41e-05</izz>
+          </inertia>
+        </inertial>
+        <velocity_decay>
+          <linear>0.01</linear>
+          <angular>0.06</angular>
+        </velocity_decay>
+
+        <enable_wind>true</enable_wind>
+        <visual name='ball_3_visual'>
+          <geometry>
+            <sphere>
+              <radius>0.0325</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.8 0.9 0.0 1</ambient>
+            <diffuse>0.8 0.9 0.0 1</diffuse>
+            <specular>0.3 0.3 0.3 1</specular>
+          </material>
+        </visual>
+        <collision name='ball_3_collision'>
+          <geometry>
+            <sphere>
+              <radius>0.0325</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.4</mu>
+                <mu2>0.4</mu2>
+              </ode>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0.8</restitution_coefficient>
+              <threshold>0.1</threshold>
+            </bounce>
+            <contact>
+              <ode>
+                <min_depth>0.002</min_depth>
+                <max_vel>5.0</max_vel>
+                <kp>5e5</kp>
+                <kd>300</kd>
+              </ode>
+            </contact>
+          </surface>
+        </collision>
+      </link>
+    </model>
+
+    <!-- Tennis Ball 4 (216 deg) -->
+    <model name="tennis_ball_4">
+      <pose relative_to="base_link">-0.0461 -0.0335 -0.12 0 0 0</pose>
+      <link name='ball_4_link'>
+        <inertial>
+          <mass>0.057</mass>
+          <inertia>
+            <ixx>2.41e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.41e-05</iyy>
+            <iyz>0</iyz>
+            <izz>2.41e-05</izz>
+          </inertia>
+        </inertial>
+        <velocity_decay>
+          <linear>0.002</linear>
+          <angular>0.002</angular>
+        </velocity_decay>
+
+        <enable_wind>true</enable_wind>
+        <visual name='ball_4_visual'>
+          <geometry>
+            <sphere>
+              <radius>0.0325</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.8 0.9 0.0 1</ambient>
+            <diffuse>0.8 0.9 0.0 1</diffuse>
+            <specular>0.3 0.3 0.3 1</specular>
+          </material>
+        </visual>
+        <collision name='ball_4_collision'>
+          <geometry>
+            <sphere>
+              <radius>0.0325</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.4</mu>
+                <mu2>0.4</mu2>
+              </ode>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0.8</restitution_coefficient>
+              <threshold>0.1</threshold>
+            </bounce>
+            <contact>
+              <ode>
+                <min_depth>0.002</min_depth>
+                <max_vel>5.0</max_vel>
+                <kp>5e5</kp>
+                <kd>300</kd>
+              </ode>
+            </contact>
+          </surface>
+        </collision>
+      </link>
+
+    </model>
+
+    <!-- Tennis Ball 5 (288 deg) -->
+    <model name="tennis_ball_5">
+      <pose relative_to="base_link">0.0176 -0.0542 -0.12 0 0 0</pose>
+      <link name='ball_5_link'>
+        <inertial>
+          <mass>0.057</mass>
+          <inertia>
+            <ixx>2.41e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.41e-05</iyy>
+            <iyz>0</iyz>
+            <izz>2.41e-05</izz>
+          </inertia>
+        </inertial>
+        <velocity_decay>
+          <linear>0.01</linear>
+          <angular>0.06</angular>
+        </velocity_decay>
+
+        <enable_wind>true</enable_wind>
+        <visual name='ball_5_visual'>
+          <geometry>
+            <sphere>
+              <radius>0.0325</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.8 0.9 0.0 1</ambient>
+            <diffuse>0.8 0.9 0.0 1</diffuse>
+            <specular>0.3 0.3 0.3 1</specular>
+          </material>
+        </visual>
+        <collision name='ball_5_collision'>
+          <geometry>
+            <sphere>
+              <radius>0.0325</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.4</mu>
+                <mu2>0.4</mu2>
+              </ode>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0.8</restitution_coefficient>
+              <threshold>0.1</threshold>
+            </bounce>
+            <contact>
+              <ode>
+                <min_depth>0.002</min_depth>
+                <max_vel>5.0</max_vel>
+                <kp>5e5</kp>
+                <kd>300</kd>
+              </ode>
+            </contact>
+          </surface>
+        </collision>
+      </link>
+    </model>
+
+    <!-- UWB tag -->
+    <include>
+      <uri>model://uwb</uri>
+      <name>uwb_tag</name>
+      <pose>0 0 0.12 0 0 0</pose>
+      <plugin name="uwb_plugin::UwbRange" filename="libuwb_range.so">
+        <variance>0.05</variance>
+      </plugin>
+    </include>
+
+    <joint name="uwb_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>uwb_tag::link</child>
+    </joint>
+
+    <!-- Detachable Joint Plugins for Tennis Balls -->
+    <plugin filename="gz-sim-detachable-joint-system"
+            name="gz::sim::systems::DetachableJoint">
+      <parent_link>base_link</parent_link>
+      <child_model>tennis_ball_1</child_model>
+      <child_link>ball_1_link</child_link>
+      <detach_topic>/ball_1/detach</detach_topic>
+      <attach_topic>/ball_1/attach</attach_topic>
+      <output_topic>/ball_1/state</output_topic>
+    </plugin>
+    <plugin filename="gz-sim-detachable-joint-system"
+            name="gz::sim::systems::DetachableJoint">
+      <parent_link>base_link</parent_link>
+      <child_model>tennis_ball_2</child_model>
+      <child_link>ball_2_link</child_link>
+      <detach_topic>/ball_2/detach</detach_topic>
+      <attach_topic>/ball_2/attach</attach_topic>
+      <output_topic>/ball_2/state</output_topic>
+    </plugin>
+    <plugin filename="gz-sim-detachable-joint-system"
+            name="gz::sim::systems::DetachableJoint">
+      <parent_link>base_link</parent_link>
+      <child_model>tennis_ball_3</child_model>
+      <child_link>ball_3_link</child_link>
+      <detach_topic>/ball_3/detach</detach_topic>
+      <attach_topic>/ball_3/attach</attach_topic>
+      <output_topic>/ball_3/state</output_topic>
+    </plugin>
+    <plugin filename="gz-sim-detachable-joint-system"
+            name="gz::sim::systems::DetachableJoint">
+      <parent_link>base_link</parent_link>
+      <child_model>tennis_ball_4</child_model>
+      <child_link>ball_4_link</child_link>
+      <detach_topic>/ball_4/detach</detach_topic>
+      <attach_topic>/ball_4/attach</attach_topic>
+      <output_topic>/ball_4/state</output_topic>
+    </plugin>
+    <plugin filename="gz-sim-detachable-joint-system"
+            name="gz::sim::systems::DetachableJoint">
+      <parent_link>base_link</parent_link>
+      <child_model>tennis_ball_5</child_model>
+      <child_link>ball_5_link</child_link>
+      <detach_topic>/ball_5/detach</detach_topic>
+      <attach_topic>/ball_5/attach</attach_topic>
+      <output_topic>/ball_5/state</output_topic>
+    </plugin>
+
+  </model>
+</sdf>

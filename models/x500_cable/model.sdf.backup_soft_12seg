@@ -1,0 +1,1028 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.9">
+  <model name="x500_cable">
+
+    <self_collide>false</self_collide>
+
+    <include merge="true">
+      <uri>model://x500_base</uri>
+    </include>
+
+    <!-- ========================================================= -->
+    <!-- Cable chain attached under x500 base_link                  -->
+    <!-- Soft cable version for contact with ring / stringing block -->
+    <!-- Total cable length: 12 x 0.06 = 0.72 m                     -->
+    <!-- ========================================================= -->
+
+    <!-- ================= cable_seg_00 ================= -->
+    <link name="cable_seg_00">
+      <pose relative_to="base_link">0 0 -0.17 0 0 0</pose>
+
+      <inertial>
+        <mass>0.003</mass>
+        <inertia>
+          <ixx>9.1875e-07</ixx>
+          <iyy>9.1875e-07</iyy>
+          <izz>3.7500e-08</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.02</mu>
+              <mu2>0.02</mu2>
+            </ode>
+          </friction>
+
+          <contact>
+            <ode>
+              <kp>20000</kp>
+              <kd>5</kd>
+              <max_vel>0.3</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.02 0.02 0.02 1</ambient>
+          <diffuse>0.02 0.02 0.02 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- ================= cable_seg_01 ================= -->
+    <link name="cable_seg_01">
+      <pose relative_to="base_link">0 0 -0.23 0 0 0</pose>
+
+      <inertial>
+        <mass>0.003</mass>
+        <inertia>
+          <ixx>9.1875e-07</ixx>
+          <iyy>9.1875e-07</iyy>
+          <izz>3.7500e-08</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.02</mu>
+              <mu2>0.02</mu2>
+            </ode>
+          </friction>
+
+          <contact>
+            <ode>
+              <kp>20000</kp>
+              <kd>5</kd>
+              <max_vel>0.3</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.02 0.02 0.02 1</ambient>
+          <diffuse>0.02 0.02 0.02 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- ================= cable_seg_02 ================= -->
+    <link name="cable_seg_02">
+      <pose relative_to="base_link">0 0 -0.29 0 0 0</pose>
+
+      <inertial>
+        <mass>0.003</mass>
+        <inertia>
+          <ixx>9.1875e-07</ixx>
+          <iyy>9.1875e-07</iyy>
+          <izz>3.7500e-08</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.02</mu>
+              <mu2>0.02</mu2>
+            </ode>
+          </friction>
+
+          <contact>
+            <ode>
+              <kp>20000</kp>
+              <kd>5</kd>
+              <max_vel>0.3</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.02 0.02 0.02 1</ambient>
+          <diffuse>0.02 0.02 0.02 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- ================= cable_seg_03 ================= -->
+    <link name="cable_seg_03">
+      <pose relative_to="base_link">0 0 -0.35 0 0 0</pose>
+
+      <inertial>
+        <mass>0.003</mass>
+        <inertia>
+          <ixx>9.1875e-07</ixx>
+          <iyy>9.1875e-07</iyy>
+          <izz>3.7500e-08</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.02</mu>
+              <mu2>0.02</mu2>
+            </ode>
+          </friction>
+
+          <contact>
+            <ode>
+              <kp>20000</kp>
+              <kd>5</kd>
+              <max_vel>0.3</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.02 0.02 0.02 1</ambient>
+          <diffuse>0.02 0.02 0.02 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- ================= cable_seg_04 ================= -->
+    <link name="cable_seg_04">
+      <pose relative_to="base_link">0 0 -0.41 0 0 0</pose>
+
+      <inertial>
+        <mass>0.003</mass>
+        <inertia>
+          <ixx>9.1875e-07</ixx>
+          <iyy>9.1875e-07</iyy>
+          <izz>3.7500e-08</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.02</mu>
+              <mu2>0.02</mu2>
+            </ode>
+          </friction>
+
+          <contact>
+            <ode>
+              <kp>20000</kp>
+              <kd>5</kd>
+              <max_vel>0.3</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.02 0.02 0.02 1</ambient>
+          <diffuse>0.02 0.02 0.02 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- ================= cable_seg_05 ================= -->
+    <link name="cable_seg_05">
+      <pose relative_to="base_link">0 0 -0.47 0 0 0</pose>
+
+      <inertial>
+        <mass>0.003</mass>
+        <inertia>
+          <ixx>9.1875e-07</ixx>
+          <iyy>9.1875e-07</iyy>
+          <izz>3.7500e-08</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.02</mu>
+              <mu2>0.02</mu2>
+            </ode>
+          </friction>
+
+          <contact>
+            <ode>
+              <kp>20000</kp>
+              <kd>5</kd>
+              <max_vel>0.3</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.02 0.02 0.02 1</ambient>
+          <diffuse>0.02 0.02 0.02 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- ================= cable_seg_06 ================= -->
+    <link name="cable_seg_06">
+      <pose relative_to="base_link">0 0 -0.53 0 0 0</pose>
+
+      <inertial>
+        <mass>0.003</mass>
+        <inertia>
+          <ixx>9.1875e-07</ixx>
+          <iyy>9.1875e-07</iyy>
+          <izz>3.7500e-08</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.02</mu>
+              <mu2>0.02</mu2>
+            </ode>
+          </friction>
+
+          <contact>
+            <ode>
+              <kp>20000</kp>
+              <kd>5</kd>
+              <max_vel>0.3</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.02 0.02 0.02 1</ambient>
+          <diffuse>0.02 0.02 0.02 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- ================= cable_seg_07 ================= -->
+    <link name="cable_seg_07">
+      <pose relative_to="base_link">0 0 -0.59 0 0 0</pose>
+
+      <inertial>
+        <mass>0.003</mass>
+        <inertia>
+          <ixx>9.1875e-07</ixx>
+          <iyy>9.1875e-07</iyy>
+          <izz>3.7500e-08</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.02</mu>
+              <mu2>0.02</mu2>
+            </ode>
+          </friction>
+
+          <contact>
+            <ode>
+              <kp>20000</kp>
+              <kd>5</kd>
+              <max_vel>0.3</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.02 0.02 0.02 1</ambient>
+          <diffuse>0.02 0.02 0.02 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- ================= cable_seg_08 ================= -->
+    <link name="cable_seg_08">
+      <pose relative_to="base_link">0 0 -0.65 0 0 0</pose>
+
+      <inertial>
+        <mass>0.003</mass>
+        <inertia>
+          <ixx>9.1875e-07</ixx>
+          <iyy>9.1875e-07</iyy>
+          <izz>3.7500e-08</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.02</mu>
+              <mu2>0.02</mu2>
+            </ode>
+          </friction>
+
+          <contact>
+            <ode>
+              <kp>20000</kp>
+              <kd>5</kd>
+              <max_vel>0.3</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.02 0.02 0.02 1</ambient>
+          <diffuse>0.02 0.02 0.02 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- ================= cable_seg_09 ================= -->
+    <link name="cable_seg_09">
+      <pose relative_to="base_link">0 0 -0.71 0 0 0</pose>
+
+      <inertial>
+        <mass>0.003</mass>
+        <inertia>
+          <ixx>9.1875e-07</ixx>
+          <iyy>9.1875e-07</iyy>
+          <izz>3.7500e-08</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.02</mu>
+              <mu2>0.02</mu2>
+            </ode>
+          </friction>
+
+          <contact>
+            <ode>
+              <kp>20000</kp>
+              <kd>5</kd>
+              <max_vel>0.3</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.02 0.02 0.02 1</ambient>
+          <diffuse>0.02 0.02 0.02 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- ================= cable_seg_10 ================= -->
+    <link name="cable_seg_10">
+      <pose relative_to="base_link">0 0 -0.77 0 0 0</pose>
+
+      <inertial>
+        <mass>0.003</mass>
+        <inertia>
+          <ixx>9.1875e-07</ixx>
+          <iyy>9.1875e-07</iyy>
+          <izz>3.7500e-08</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.02</mu>
+              <mu2>0.02</mu2>
+            </ode>
+          </friction>
+
+          <contact>
+            <ode>
+              <kp>20000</kp>
+              <kd>5</kd>
+              <max_vel>0.3</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.02 0.02 0.02 1</ambient>
+          <diffuse>0.02 0.02 0.02 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- ================= cable_seg_11 ================= -->
+    <link name="cable_seg_11">
+      <pose relative_to="base_link">0 0 -0.83 0 0 0</pose>
+
+      <inertial>
+        <mass>0.003</mass>
+        <inertia>
+          <ixx>9.1875e-07</ixx>
+          <iyy>9.1875e-07</iyy>
+          <izz>3.7500e-08</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.02</mu>
+              <mu2>0.02</mu2>
+            </ode>
+          </friction>
+
+          <contact>
+            <ode>
+              <kp>20000</kp>
+              <kd>5</kd>
+              <max_vel>0.3</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.02 0.02 0.02 1</ambient>
+          <diffuse>0.02 0.02 0.02 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- ========================================================= -->
+    <!-- Cable joints                                               -->
+    <!-- ========================================================= -->
+
+    <joint name="base_link_to_cable_seg_00" type="universal">
+      <parent>base_link</parent>
+      <child>cable_seg_00</child>
+      <pose relative_to="base_link">0 0 -0.14 0 0 0</pose>
+
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0.008</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis>
+
+      <axis2>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0.008</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis2>
+    </joint>
+
+    <joint name="cable_seg_00_to_cable_seg_01" type="universal">
+      <parent>cable_seg_00</parent>
+      <child>cable_seg_01</child>
+      <pose relative_to="cable_seg_00">0 0 -0.03 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis2>
+    </joint>
+
+    <joint name="cable_seg_01_to_cable_seg_02" type="universal">
+      <parent>cable_seg_01</parent>
+      <child>cable_seg_02</child>
+      <pose relative_to="cable_seg_01">0 0 -0.03 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis2>
+    </joint>
+
+    <joint name="cable_seg_02_to_cable_seg_03" type="universal">
+      <parent>cable_seg_02</parent>
+      <child>cable_seg_03</child>
+      <pose relative_to="cable_seg_02">0 0 -0.03 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis2>
+    </joint>
+
+    <joint name="cable_seg_03_to_cable_seg_04" type="universal">
+      <parent>cable_seg_03</parent>
+      <child>cable_seg_04</child>
+      <pose relative_to="cable_seg_03">0 0 -0.03 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis2>
+    </joint>
+
+    <joint name="cable_seg_04_to_cable_seg_05" type="universal">
+      <parent>cable_seg_04</parent>
+      <child>cable_seg_05</child>
+      <pose relative_to="cable_seg_04">0 0 -0.03 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis2>
+    </joint>
+
+    <joint name="cable_seg_05_to_cable_seg_06" type="universal">
+      <parent>cable_seg_05</parent>
+      <child>cable_seg_06</child>
+      <pose relative_to="cable_seg_05">0 0 -0.03 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis2>
+    </joint>
+
+    <joint name="cable_seg_06_to_cable_seg_07" type="universal">
+      <parent>cable_seg_06</parent>
+      <child>cable_seg_07</child>
+      <pose relative_to="cable_seg_06">0 0 -0.03 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis2>
+    </joint>
+
+    <joint name="cable_seg_07_to_cable_seg_08" type="universal">
+      <parent>cable_seg_07</parent>
+      <child>cable_seg_08</child>
+      <pose relative_to="cable_seg_07">0 0 -0.03 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis2>
+    </joint>
+
+    <joint name="cable_seg_08_to_cable_seg_09" type="universal">
+      <parent>cable_seg_08</parent>
+      <child>cable_seg_09</child>
+      <pose relative_to="cable_seg_08">0 0 -0.03 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis2>
+    </joint>
+
+    <joint name="cable_seg_09_to_cable_seg_10" type="universal">
+      <parent>cable_seg_09</parent>
+      <child>cable_seg_10</child>
+      <pose relative_to="cable_seg_09">0 0 -0.03 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis2>
+    </joint>
+
+    <joint name="cable_seg_10_to_cable_seg_11" type="universal">
+      <parent>cable_seg_10</parent>
+      <child>cable_seg_11</child>
+      <pose relative_to="cable_seg_10">0 0 -0.03 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0.0035</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis2>
+    </joint>
+
+    <!-- ========================================================= -->
+    <!-- Original x500 motor plugins                                -->
+    <!-- ========================================================= -->
+
+    <plugin filename="gz-sim-multicopter-motor-model-system"
+      name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_0_joint</jointName>
+      <linkName>rotor_0</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>0</motorNumber>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+
+    <plugin filename="gz-sim-multicopter-motor-model-system"
+      name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_1_joint</jointName>
+      <linkName>rotor_1</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>1</motorNumber>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+
+    <plugin filename="gz-sim-multicopter-motor-model-system"
+      name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_2_joint</jointName>
+      <linkName>rotor_2</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>2</motorNumber>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+
+    <plugin filename="gz-sim-multicopter-motor-model-system"
+      name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_3_joint</jointName>
+      <linkName>rotor_3</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>3</motorNumber>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+
+    <plugin filename="MotorFailurePlugin"
+      name="gz::sim::systems::MotorFailureSystem">
+    </plugin>
+
+  </model>
+</sdf>
