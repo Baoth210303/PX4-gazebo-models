@@ -1,0 +1,392 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <model name="f450_base">
+    <pose>0 0 .24 0 0 0</pose>
+    <self_collide>false</self_collide>
+    <static>false</static>
+    <link name="base_link">
+      <inertial>
+        <pose>0.00036096 -0.00071299 -0.07324631 0 0 0</pose>
+        <mass>1.25202236</mass>
+        <inertia>
+          <ixx>0.01329592</ixx>
+          <ixy>-5.14e-06</ixy>
+          <ixz>8.067e-05</ixz>
+          <iyy>0.01393082</iyy>
+          <iyz>0.00026361</iyz>
+          <izz>0.022269</izz>
+        </inertia>
+      </inertial>
+      <gravity>true</gravity>
+      <velocity_decay />
+      <visual name="f450_body_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://f450_base/meshes/base_link.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="f450_body_collision">
+        <pose>0.00000000 0.00000000 -0.07500000 0.00000000 0.00000000 0.00000000</pose>
+        <geometry>
+          <box>
+            <size>0.15000000 0.15000000 0.08000000</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="f450_arm_-1_-1">
+        <pose>-0.09000000 -0.09000000 -0.06000000 0.00000000 0.00000000 -2.35619449</pose>
+        <geometry>
+          <box>
+            <size>0.20000000 0.02400000 0.02000000</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="f450_arm_-1_1">
+        <pose>-0.09000000 0.09000000 -0.06000000 0.00000000 0.00000000 2.35619449</pose>
+        <geometry>
+          <box>
+            <size>0.20000000 0.02400000 0.02000000</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="f450_arm_1_-1">
+        <pose>0.09000000 -0.09000000 -0.06000000 0.00000000 0.00000000 -0.78539816</pose>
+        <geometry>
+          <box>
+            <size>0.20000000 0.02400000 0.02000000</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="f450_arm_1_1">
+        <pose>0.09000000 0.09000000 -0.06000000 0.00000000 0.00000000 0.78539816</pose>
+        <geometry>
+          <box>
+            <size>0.20000000 0.02400000 0.02000000</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="f450_foot_-1_-1">
+        <pose>-0.09800000 -0.09800000 -0.23260000 0.00000000 0.00000000 0.00000000</pose>
+        <geometry>
+          <box>
+            <size>0.01800000 0.01800000 0.01000000</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="f450_foot_-1_1">
+        <pose>-0.09800000 0.09800000 -0.23260000 0.00000000 0.00000000 0.00000000</pose>
+        <geometry>
+          <box>
+            <size>0.01800000 0.01800000 0.01000000</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="f450_foot_1_-1">
+        <pose>0.09800000 -0.09800000 -0.23260000 0.00000000 0.00000000 0.00000000</pose>
+        <geometry>
+          <box>
+            <size>0.01800000 0.01800000 0.01000000</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="f450_foot_1_1">
+        <pose>0.09800000 0.09800000 -0.23260000 0.00000000 0.00000000 0.00000000</pose>
+        <geometry>
+          <box>
+            <size>0.01800000 0.01800000 0.01000000</size>
+          </box>
+        </geometry>
+      </collision>
+      <sensor name="air_pressure_sensor" type="air_pressure">
+        <gz_frame_id>base_link</gz_frame_id>
+        <always_on>1</always_on>
+        <update_rate>50</update_rate>
+        <air_pressure>
+          <pressure>
+            <noise type="gaussian">
+              <mean>0</mean>
+              <stddev>3</stddev>
+            </noise>
+          </pressure>
+        </air_pressure>
+      </sensor>
+      <sensor name="magnetometer_sensor" type="magnetometer">
+        <gz_frame_id>base_link</gz_frame_id>
+        <always_on>1</always_on>
+        <update_rate>100</update_rate>
+        <magnetometer>
+          <x>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </z>
+        </magnetometer>
+      </sensor>
+      <sensor name="imu_sensor" type="imu">
+        <gz_frame_id>base_link</gz_frame_id>
+        <always_on>1</always_on>
+        <update_rate>250</update_rate>
+        <imu>
+          <angular_velocity>
+            <x>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.00637</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.00637</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.00686</stddev>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu>
+      </sensor>
+      <sensor name="navsat_sensor" type="navsat">
+        <gz_frame_id>base_link</gz_frame_id>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+      </sensor>
+    </link>
+    <link name="rotor_0">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay />
+      <pose>0.1597 -0.1597 0.0 0 0 0</pose>
+      <inertial>
+        <pose>-1.02e-06 -1.56e-06 -0.00793864 0 0 0</pose>
+        <mass>0.0125</mass>
+        <inertia>
+          <ixx>1.784e-05</ixx>
+          <iyy>8.72e-06</iyy>
+          <izz>2.635e-05</izz>
+          <ixy>-1.197e-05</ixy>
+          <ixz>3e-08</ixz>
+          <iyz>5e-08</iyz>
+        </inertia>
+      </inertial>
+      <visual name="rotor_0_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://f450_base/meshes/prop_1.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="rotor_0_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.24 0.02 0.004</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="rotor_0_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_0</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_1">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay />
+      <pose>-0.1597 0.1597 0.0 0 0 0</pose>
+      <inertial>
+        <pose>-1.22e-06 -1.41e-06 -0.00793864 0 0 0</pose>
+        <mass>0.0125</mass>
+        <inertia>
+          <ixx>1.454e-05</ixx>
+          <iyy>1.202e-05</iyy>
+          <izz>2.635e-05</izz>
+          <ixy>-1.275e-05</ixy>
+          <ixz>4e-08</ixz>
+          <iyz>4e-08</iyz>
+        </inertia>
+      </inertial>
+      <visual name="rotor_1_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://f450_base/meshes/prop_2.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="rotor_1_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.24 0.02 0.004</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="rotor_1_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_2">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay />
+      <pose>0.1597 0.1597 0.0 0 0 0</pose>
+      <inertial>
+        <pose>-1.14e-06 1.54e-06 -0.00691914 0 0 0</pose>
+        <mass>0.0125</mass>
+        <inertia>
+          <ixx>1.604e-05</ixx>
+          <iyy>1.052e-05</iyy>
+          <izz>2.635e-05</izz>
+          <ixy>1.251e-05</ixy>
+          <ixz>4e-08</ixz>
+          <iyz>-5e-08</iyz>
+        </inertia>
+      </inertial>
+      <visual name="rotor_2_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://f450_base/meshes/prop_3.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="rotor_2_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.24 0.02 0.004</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="rotor_2_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_3">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay />
+      <pose>-0.1597 -0.1597 0.0 0 0 0</pose>
+      <inertial>
+        <pose>1.04e-06 -1.61e-06 -0.00778517 0 0 0</pose>
+        <mass>0.0125</mass>
+        <inertia>
+          <ixx>1.765e-05</ixx>
+          <iyy>8.91e-06</iyy>
+          <izz>2.635e-05</izz>
+          <ixy>1.204e-05</ixy>
+          <ixz>-3e-08</ixz>
+          <iyz>5e-08</iyz>
+        </inertia>
+      </inertial>
+      <visual name="rotor_3_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://f450_base/meshes/prop_4.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="rotor_3_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.24 0.02 0.004</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="rotor_3_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+  </model>
+</sdf>
