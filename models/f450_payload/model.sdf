@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version='1.9'>
+  <model name='f450_payload'>
+    <include merge='true'>
+      <uri>model://f450_base</uri>
+    </include>
+    <plugin filename="gz-sim-multicopter-motor-model-system"
+      name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_0_joint</jointName>
+      <linkName>rotor_0</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.10e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>0</motorNumber>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system"
+      name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_1_joint</jointName>
+      <linkName>rotor_1</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.10e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>1</motorNumber>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system"
+      name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_2_joint</jointName>
+      <linkName>rotor_2</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.10e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>2</motorNumber>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system"
+      name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_3_joint</jointName>
+      <linkName>rotor_3</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.10e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>3</motorNumber>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="MotorFailurePlugin"
+      name="gz::sim::systems::MotorFailureSystem">
+    </plugin>
+  <self_collide>false</self_collide>
+<!-- F450 cable derived from x500_cable universal-joint pattern; 10 links, no cable contact geometry for initial diagnosis. -->
+<link name="cable_seg_00">
+        <pose relative_to="base_link">-0.0248985441 0 -0.1222500000 0 -1.660918271809 0</pose>
+        <gravity>true</gravity>
+        <inertial>
+        <mass>0.003000000</mass>
+        <inertia>
+          <ixx>6.370000000000e-07</ixx><iyy>6.370000000000e-07</iyy><izz>2.400000000000e-08</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+        <visual name="cable_visual_00">
+          <geometry><cylinder><radius>0.004</radius><length>0.05</length></cylinder></geometry>
+          <material><ambient>0.13 0.18 0.23 1</ambient><diffuse>0.13 0.18 0.23 1</diffuse></material>
+        </visual>
+      </link>
+<joint name="drone_to_cable" type="universal">
+      <parent>base_link</parent>
+      <child>cable_seg_00</child>
+      <pose relative_to="base_link">0.0000000000 0.0000000000 -0.1200000000 0 -1.660918271809 0</pose>
+      <axis><xyz>1 0 0</xyz><dynamics><damping>0.008</damping><friction>0</friction></dynamics></axis>
+      <axis2><xyz>0 1 0</xyz><dynamics><damping>0.008</damping><friction>0</friction></dynamics></axis2>
+    </joint>
+<link name="cable_seg_01">
+        <pose relative_to="base_link">-0.0746956324 0 -0.1267500000 0 -1.660918271809 0</pose>
+        <gravity>true</gravity>
+        <inertial>
+        <mass>0.003000000</mass>
+        <inertia>
+          <ixx>6.370000000000e-07</ixx><iyy>6.370000000000e-07</iyy><izz>2.400000000000e-08</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+        <visual name="cable_visual_01">
+          <geometry><cylinder><radius>0.004</radius><length>0.05</length></cylinder></geometry>
+          <material><ambient>0.13 0.18 0.23 1</ambient><diffuse>0.13 0.18 0.23 1</diffuse></material>
+        </visual>
+      </link>
+<joint name="cable_joint_01" type="universal">
+      <parent>cable_seg_00</parent>
+      <child>cable_seg_01</child>
+      <pose relative_to="cable_seg_00">0.0000000000 0.0000000000 0.0250000000 0 0.000000000000 0</pose>
+      <axis><xyz>1 0 0</xyz><dynamics><damping>0.0035</damping><friction>0</friction></dynamics></axis>
+      <axis2><xyz>0 1 0</xyz><dynamics><damping>0.0035</damping><friction>0</friction></dynamics></axis2>
+    </joint>
+<link name="cable_seg_02">
+        <pose relative_to="base_link">-0.1244927207 0 -0.1312500000 0 -1.660918271809 0</pose>
+        <gravity>true</gravity>
+        <inertial>
+        <mass>0.003000000</mass>
+        <inertia>
+          <ixx>6.370000000000e-07</ixx><iyy>6.370000000000e-07</iyy><izz>2.400000000000e-08</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+        <visual name="cable_visual_02">
+          <geometry><cylinder><radius>0.004</radius><length>0.05</length></cylinder></geometry>
+          <material><ambient>0.13 0.18 0.23 1</ambient><diffuse>0.13 0.18 0.23 1</diffuse></material>
+        </visual>
+      </link>
+<joint name="cable_joint_02" type="universal">
+      <parent>cable_seg_01</parent>
+      <child>cable_seg_02</child>
+      <pose relative_to="cable_seg_01">0.0000000000 0.0000000000 0.0250000000 0 0.000000000000 0</pose>
+      <axis><xyz>1 0 0</xyz><dynamics><damping>0.0035</damping><friction>0</friction></dynamics></axis>
+      <axis2><xyz>0 1 0</xyz><dynamics><damping>0.0035</damping><friction>0</friction></dynamics></axis2>
+    </joint>
+<link name="cable_seg_03">
+        <pose relative_to="base_link">-0.1742898089 0 -0.1357500000 0 -1.660918271809 0</pose>
+        <gravity>true</gravity>
+        <inertial>
+        <mass>0.003000000</mass>
+        <inertia>
+          <ixx>6.370000000000e-07</ixx><iyy>6.370000000000e-07</iyy><izz>2.400000000000e-08</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+        <visual name="cable_visual_03">
+          <geometry><cylinder><radius>0.004</radius><length>0.05</length></cylinder></geometry>
+          <material><ambient>0.13 0.18 0.23 1</ambient><diffuse>0.13 0.18 0.23 1</diffuse></material>
+        </visual>
+      </link>
+<joint name="cable_joint_03" type="universal">
+      <parent>cable_seg_02</parent>
+      <child>cable_seg_03</child>
+      <pose relative_to="cable_seg_02">0.0000000000 0.0000000000 0.0250000000 0 0.000000000000 0</pose>
+      <axis><xyz>1 0 0</xyz><dynamics><damping>0.0035</damping><friction>0</friction></dynamics></axis>
+      <axis2><xyz>0 1 0</xyz><dynamics><damping>0.0035</damping><friction>0</friction></dynamics></axis2>
+    </joint>
+<link name="cable_seg_04">
+        <pose relative_to="base_link">-0.2240868972 0 -0.1402500000 0 -1.660918271809 0</pose>
+        <gravity>true</gravity>
+        <inertial>
+        <mass>0.003000000</mass>
+        <inertia>
+          <ixx>6.370000000000e-07</ixx><iyy>6.370000000000e-07</iyy><izz>2.400000000000e-08</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+        <visual name="cable_visual_04">
+          <geometry><cylinder><radius>0.004</radius><length>0.05</length></cylinder></geometry>
+          <material><ambient>0.13 0.18 0.23 1</ambient><diffuse>0.13 0.18 0.23 1</diffuse></material>
+        </visual>
+      </link>
+<joint name="cable_joint_04" type="universal">
+      <parent>cable_seg_03</parent>
+      <child>cable_seg_04</child>
+      <pose relative_to="cable_seg_03">0.0000000000 0.0000000000 0.0250000000 0 0.000000000000 0</pose>
+      <axis><xyz>1 0 0</xyz><dynamics><damping>0.0035</damping><friction>0</friction></dynamics></axis>
+      <axis2><xyz>0 1 0</xyz><dynamics><damping>0.0035</damping><friction>0</friction></dynamics></axis2>
+    </joint>
+<link name="cable_seg_05">
+        <pose relative_to="base_link">-0.2738839855 0 -0.1447500000 0 -1.660918271809 0</pose>
+        <gravity>true</gravity>
+        <inertial>
+        <mass>0.003000000</mass>
+        <inertia>
+          <ixx>6.370000000000e-07</ixx><iyy>6.370000000000e-07</iyy><izz>2.400000000000e-08</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+        <visual name="cable_visual_05">
+          <geometry><cylinder><radius>0.004</radius><length>0.05</length></cylinder></geometry>
+          <material><ambient>0.13 0.18 0.23 1</ambient><diffuse>0.13 0.18 0.23 1</diffuse></material>
+        </visual>
+      </link>
+<joint name="cable_joint_05" type="universal">
+      <parent>cable_seg_04</parent>
+      <child>cable_seg_05</child>
+      <pose relative_to="cable_seg_04">0.0000000000 0.0000000000 0.0250000000 0 0.000000000000 0</pose>
+      <axis><xyz>1 0 0</xyz><dynamics><damping>0.0035</damping><friction>0</friction></dynamics></axis>
+      <axis2><xyz>0 1 0</xyz><dynamics><damping>0.0035</damping><friction>0</friction></dynamics></axis2>
+    </joint>
+<link name="cable_seg_06">
+        <pose relative_to="base_link">-0.3236810737 0 -0.1492500000 0 -1.660918271809 0</pose>
+        <gravity>true</gravity>
+        <inertial>
+        <mass>0.003000000</mass>
+        <inertia>
+          <ixx>6.370000000000e-07</ixx><iyy>6.370000000000e-07</iyy><izz>2.400000000000e-08</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+        <visual name="cable_visual_06">
+          <geometry><cylinder><radius>0.004</radius><length>0.05</length></cylinder></geometry>
+          <material><ambient>0.13 0.18 0.23 1</ambient><diffuse>0.13 0.18 0.23 1</diffuse></material>
+        </visual>
+      </link>
+<joint name="cable_joint_06" type="universal">
+      <parent>cable_seg_05</parent>
+      <child>cable_seg_06</child>
+      <pose relative_to="cable_seg_05">0.0000000000 0.0000000000 0.0250000000 0 0.000000000000 0</pose>
+      <axis><xyz>1 0 0</xyz><dynamics><damping>0.0035</damping><friction>0</friction></dynamics></axis>
+      <axis2><xyz>0 1 0</xyz><dynamics><damping>0.0035</damping><friction>0</friction></dynamics></axis2>
+    </joint>
+<link name="cable_seg_07">
+        <pose relative_to="base_link">-0.3734781620 0 -0.1537500000 0 -1.660918271809 0</pose>
+        <gravity>true</gravity>
+        <inertial>
+        <mass>0.003000000</mass>
+        <inertia>
+          <ixx>6.370000000000e-07</ixx><iyy>6.370000000000e-07</iyy><izz>2.400000000000e-08</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+        <visual name="cable_visual_07">
+          <geometry><cylinder><radius>0.004</radius><length>0.05</length></cylinder></geometry>
+          <material><ambient>0.13 0.18 0.23 1</ambient><diffuse>0.13 0.18 0.23 1</diffuse></material>
+        </visual>
+      </link>
+<joint name="cable_joint_07" type="universal">
+      <parent>cable_seg_06</parent>
+      <child>cable_seg_07</child>
+      <pose relative_to="cable_seg_06">0.0000000000 0.0000000000 0.0250000000 0 0.000000000000 0</pose>
+      <axis><xyz>1 0 0</xyz><dynamics><damping>0.0035</damping><friction>0</friction></dynamics></axis>
+      <axis2><xyz>0 1 0</xyz><dynamics><damping>0.0035</damping><friction>0</friction></dynamics></axis2>
+    </joint>
+<link name="cable_seg_08">
+        <pose relative_to="base_link">-0.4232752503 0 -0.1582500000 0 -1.660918271809 0</pose>
+        <gravity>true</gravity>
+        <inertial>
+        <mass>0.003000000</mass>
+        <inertia>
+          <ixx>6.370000000000e-07</ixx><iyy>6.370000000000e-07</iyy><izz>2.400000000000e-08</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+        <visual name="cable_visual_08">
+          <geometry><cylinder><radius>0.004</radius><length>0.05</length></cylinder></geometry>
+          <material><ambient>0.13 0.18 0.23 1</ambient><diffuse>0.13 0.18 0.23 1</diffuse></material>
+        </visual>
+      </link>
+<joint name="cable_joint_08" type="universal">
+      <parent>cable_seg_07</parent>
+      <child>cable_seg_08</child>
+      <pose relative_to="cable_seg_07">0.0000000000 0.0000000000 0.0250000000 0 0.000000000000 0</pose>
+      <axis><xyz>1 0 0</xyz><dynamics><damping>0.0035</damping><friction>0</friction></dynamics></axis>
+      <axis2><xyz>0 1 0</xyz><dynamics><damping>0.0035</damping><friction>0</friction></dynamics></axis2>
+    </joint>
+<link name="cable_seg_09">
+        <pose relative_to="base_link">-0.4730723385 0 -0.1627500000 0 -1.660918271809 0</pose>
+        <gravity>true</gravity>
+        <inertial>
+        <mass>0.003000000</mass>
+        <inertia>
+          <ixx>6.370000000000e-07</ixx><iyy>6.370000000000e-07</iyy><izz>2.400000000000e-08</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+        <visual name="cable_visual_09">
+          <geometry><cylinder><radius>0.004</radius><length>0.05</length></cylinder></geometry>
+          <material><ambient>0.13 0.18 0.23 1</ambient><diffuse>0.13 0.18 0.23 1</diffuse></material>
+        </visual>
+      </link>
+<joint name="cable_joint_09" type="universal">
+      <parent>cable_seg_08</parent>
+      <child>cable_seg_09</child>
+      <pose relative_to="cable_seg_08">0.0000000000 0.0000000000 0.0250000000 0 0.000000000000 0</pose>
+      <axis><xyz>1 0 0</xyz><dynamics><damping>0.0035</damping><friction>0</friction></dynamics></axis>
+      <axis2><xyz>0 1 0</xyz><dynamics><damping>0.0035</damping><friction>0</friction></dynamics></axis2>
+    </joint>
+<link name="payload_link">
+      <pose relative_to="base_link">-0.4979708827 0 -0.1650000000 0 0 0</pose>
+      <gravity>true</gravity>
+      <inertial>
+        <mass>0.500000000</mass>
+        <inertia>
+          <ixx>1.125000000000e-03</ixx><iyy>1.125000000000e-03</iyy><izz>1.125000000000e-03</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="payload_visual">
+        <geometry><sphere><radius>0.075</radius></sphere></geometry>
+        <material><ambient>0.94 0.41 0.10 1</ambient><diffuse>0.94 0.41 0.10 1</diffuse></material>
+      </visual>
+      <collision name="payload_collision">
+        <geometry><sphere><radius>0.075</radius></sphere></geometry>
+      </collision>
+    </link>
+<joint name="cable_to_payload" type="universal">
+      <parent>cable_seg_09</parent>
+      <child>payload_link</child>
+      <pose relative_to="cable_seg_09">0.0000000000 0.0000000000 0.0250000000 0 0.000000000000 0</pose>
+      <axis><xyz>1 0 0</xyz><dynamics><damping>0.005</damping><friction>0</friction></dynamics></axis>
+      <axis2><xyz>0 1 0</xyz><dynamics><damping>0.005</damping><friction>0</friction></dynamics></axis2>
+    </joint>
+  </model>
+</sdf>
